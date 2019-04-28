@@ -44,7 +44,7 @@ gql <- function(query) {
     if (!is.null(cursor)) {
       q <- paste(query, "OFFSET @cursor")
       nb <- list("cursor" = list("cursor" = cursor))
-      body <- list(gqlQuery = list(queryString = q, allowLiterals = FALSE, namedBindings = nb))
+      body <- list(gqlQuery = list(queryString = q, allowLiterals = TRUE, namedBindings = nb))
     } else {
       q <- query
       body <- list(gqlQuery = list(queryString = q, allowLiterals = TRUE))
